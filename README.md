@@ -64,7 +64,7 @@ CLV(고객생애가치) 예측을 위해 lifetimes 라이브러리를 사용하�
 
 ### 2.1.2. CLV 변수 생성
 
-![image.png](attachment:390b3c4a-19e2-4502-9d1c-4662afab697f:image.png)
+![image](https://github.com/user-attachments/assets/04c4ea62-668c-406b-a64d-82af57a18d51)
 
 (참고 : [인텔리전스랩스](https://www.intelligencelabs.tech/7430a289-22e5-4967-b3b8-03a8644b189f))
 
@@ -88,7 +88,8 @@ CLV(고객생애가치) 예측을 위해 lifetimes 라이브러리를 사용하�
 
 KMEANS 클러스터링 적용 (변수 : RFM + T + CLV)
 
-![image.png](attachment:acd8a72a-4f39-4e3f-b2ca-6a1bba76280a:image.png)
+![image](https://github.com/user-attachments/assets/99906ba3-2dfe-420f-864c-99a32df63643)
+
 
 클러스터 개수는 4개로 결정하였음.
 
@@ -98,7 +99,8 @@ KMEANS 클러스터링 적용 (변수 : RFM + T + CLV)
 
 - LightGBM 모델 적용 : 다중 클래스 예측 가능, 빠른 속도, 검증된 성능 ( 정확도 0.986 )
 
-![image.png](attachment:a66ed4c0-93c5-4ee5-8298-233fd3294f0c:image.png)
+![image](https://github.com/user-attachments/assets/c2d213b7-fa49-47b0-b94f-07beae152003)
+
 
 - recency: 0.2782
 - frequency: 0.1076
@@ -113,12 +115,14 @@ KMEANS 클러스터링 적용 (변수 : RFM + T + CLV)
 - segment : VIP(최상위 고객), Gold(충성 고객), Silver(우수 고객), Bronze(일반 고객), At Risk(이탈 위험 고객)
 - segment별 고객 수
 
-![segment_cnt.png](attachment:74ec13cd-c66d-4b73-bf53-4338aabbf041:segment_cnt.png)
+![image](https://github.com/user-attachments/assets/8e43a50e-2460-4ffb-a828-d721b06e655d)
+
 
 - segment별 평균 사용 금액 비율
     - VIP, Gold 그룹이 절반 이상의 금액 비율을 차지하고 있음.
 
-![segment_amt.png](attachment:6bcba723-dd0f-49d6-9cb4-09c8141a51ea:segment_amt.png)
+![image](https://github.com/user-attachments/assets/2355fdba-75d5-4e41-92c9-44469a3c3a5b)
+
 
 # 3. 고객 등급별 특징 분석 및 전략 제안
 
@@ -137,14 +141,14 @@ KMEANS 클러스터링 적용 (변수 : RFM + T + CLV)
 
 [세그먼트별 각 카테고리 평균 구매량 히트맵]
 
-![image.png](attachment:9f7113e0-2a0a-4a36-a000-c246f4a49dd2:image.png)
+![image](https://github.com/user-attachments/assets/9dc53178-1a05-459e-a5d7-1880141edaa5)
 
 - Apparel, Nest-USA, Office는 전체적으로 판매량이 높은 카테고리
 - 고비용 카테고리로 확인한 Nest-USA, Nest, Bags는 세그먼트가 높아질수록 구매량이 증가하는 것을 확인할 수 있다.
 
 [ 세그먼트별 연관 구매 상품 네트워크 그래프]
 
-![image.png](attachment:47127c2e-b8fb-4692-b362-c70e44c79c29:image.png)
+![image](https://github.com/user-attachments/assets/c9b3e6d3-090e-44e0-a4ec-e430e2cd0434)
 
 - 높은 세그먼트로 갈수록 향상도(Lift) 자체가 높음(=엣지의 굵기)
     - 향상도 : A가 주어지지 않았을 때 B의 확률 대비 A가 주어졌을 때 B의 확률 증가 비율(연관성)
@@ -156,7 +160,7 @@ KMEANS 클러스터링 적용 (변수 : RFM + T + CLV)
 
 [세그먼트별 평균 쿠폰 사용상태 히트맵]
 
-![image.png](attachment:2cc2f7f2-3774-47e7-8c3a-deda613b016e:image.png)
+![image](https://github.com/user-attachments/assets/9df944f0-d172-4905-8b7c-9661094a72cb)
 
 - 높은 세그먼트로 갈수록 모든 쿠폰 상태(사용/미사용/클릭)에서 평균 값이 훨씬 높은 것을 확인할 수 있다.
 - 쿠폰 사용 횟수 자체가 거래량에 의존하다보니 더욱 많은 거래를 하는 고세그먼트로 갈수록 평균값이 높을 수 밖에 없기에 비율로 계산하여 다시 확인함.
@@ -168,7 +172,7 @@ KMEANS 클러스터링 적용 (변수 : RFM + T + CLV)
 
 [세그먼트별 평균 월별 구매량 그래프]
 
-![image.png](attachment:069916a5-821a-4593-88e3-991fa409d6ba:image.png)
+![image](https://github.com/user-attachments/assets/618f215f-71f0-421c-a2dc-d8cf4281e6ea)
 
 - 시즌별로 구매량이 튀는 세그먼트 : VIP, Gold, Bronze
     - VIP : 연초/여름/연말에 구매량이 매우 높게 오른다.
@@ -183,7 +187,7 @@ KMEANS 클러스터링 적용 (변수 : RFM + T + CLV)
 
 [세그먼트별 평균 요일별 구매량 그래프]
 
-![image.png](attachment:2e7b82c1-660a-4ddb-b83f-3804c3927401:image.png)
+![image](https://github.com/user-attachments/assets/5234c244-d2cc-4a2a-83c6-d43beece31c1)
 
 - 평일과 주말에 큰 차이를 보이지 않는다.
 - 월, 화요일에는 모든 세그먼트에서 구매량이 저조하다.
@@ -193,9 +197,10 @@ KMEANS 클러스터링 적용 (변수 : RFM + T + CLV)
 
 ### 3.5. 세그먼트별 분석 결과에 따른 페르소나 정의
 
-![image.png](attachment:947c2844-8093-45b9-9cb0-eca9409f7f7d:image.png)
+![image](https://github.com/user-attachments/assets/34ca1ec1-cbb6-4732-a0f4-47618ee6dd38)
 
-![image.png](attachment:bd4c746b-d5b9-4567-8df8-421c460750ad:image.png)
+![image](https://github.com/user-attachments/assets/cdfc855c-d2ee-4741-91fc-282d73970cda)
+
 
 ### 3.6. 세그먼트별 마케팅 전략
 
@@ -233,7 +238,7 @@ KMEANS 클러스터링 적용 (변수 : RFM + T + CLV)
 
 ### 4.1.  고객들의 평균 구매 주기 예측하기
 
-![image.png](attachment:ec81e886-31d3-49de-8933-fbd9bcbb0e6b:image.png)
+![image](https://github.com/user-attachments/assets/d29dfad9-e65b-4d49-afb4-5bb15597a7eb)
 
 - 수치형 변수 StandardScaler 적용
 - Gradient Boosting Regressor 사용
@@ -249,7 +254,7 @@ KMEANS 클러스터링 적용 (변수 : RFM + T + CLV)
 
 **결과 (유저별 추천제품 5개 )**
 
-![image.png](attachment:a7cc0709-2b2a-423f-b2cc-9837ff84c33a:image.png)
+![image](https://github.com/user-attachments/assets/7fc0adf0-4f2b-4306-8d4e-ca810e779cdb)
 
 ### 4.3.  평균 구매 간격 예측 모델 & 연관 상품 추천을 활용한 솔루션
 
@@ -265,7 +270,7 @@ KMEANS 클러스터링 적용 (변수 : RFM + T + CLV)
 
 [쿠폰 발행 솔루션]
 
-![image.png](attachment:257e1205-6cee-46e5-ab0f-b3889af31eae:image.png)
+![image](https://github.com/user-attachments/assets/56c96e44-933e-4936-87fa-7570f2d08e52)
 
 - 월별로 모든 제품에 같은 할인율의 쿠폰을 발행
 - 고객들의 구매 패턴 파악 및 시즌별 수요 높은 제품을 식별하여, 해당 제품에 대한 집중 할인 쿠폰
